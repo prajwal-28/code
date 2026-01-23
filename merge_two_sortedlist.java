@@ -1,4 +1,4 @@
-class Solution {
+class Solution {  // javaCode
     public ListNode mergeTwoLists(ListNode list1, ListNode list2) {
         
         // Ek dummy node banaya (value 0) – iska kaam sirf starting mein help karna hai
