@@ -15,3 +15,4 @@ public:
     }
 };
 
+gemini - excel column conversion explained
