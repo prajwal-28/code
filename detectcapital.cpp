@@ -1,32 +1,31 @@
 class Solution {
 public:
-    bool detectCapitalUse(string word) {
-        int capitalCount = 0;
-        int n = word.length();
+    string convertToBase7(int num) {
         
-        
-        for (char c : word) {
-            if (isupper(c)) {
-                capitalCount++;
-            }
+        if (num == 0) {
+            return "0";
         }
         
         
-        if (capitalCount == n) {
-            return true;
+        bool isNegative = num < 0;
+        int n = abs(num);
+        string result = "";
+        
+        
+        while (n > 0) {
+            int remainder = n % 7;
+            result += to_string(remainder);
+            n = n / 7;
+        }
+        
+    
+        if (isNegative) {
+            result += "-";
         }
         
         
-        if (capitalCount == 0) {
-            return true;
-        }
+        reverse(result.begin(), result.end());
         
-        
-        if (capitalCount == 1 && isupper(word[0])) {
-            return true;
-        }
-        
-        
-        return false;
+        return result;
     }
 };
